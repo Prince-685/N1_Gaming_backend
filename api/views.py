@@ -771,7 +771,7 @@ def Redeem_slip(request):
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def Credit(request):
-    data=json.loads(request.body)
+    data=request.GET
     uname=data.get('username')
     user=CustomUser.objects.get(username=uname)
     credit=user.credit

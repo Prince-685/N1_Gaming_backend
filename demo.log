@@ -1952,3 +1952,8 @@ TypeError: User_status() got an unexpected keyword argument 'username'
 E:\N1-Gaming\N1_Gaming\api\urls.py changed, reloading.
 Watching for file changes with StatReloader
 Internal Server Error: /userStatus/Prince
+Watching for file changes with StatReloader
+E:\N1-Gaming\N1_Gaming\N1_Gaming\settings.py changed, reloading.
+Watching for file changes with StatReloader
+E:\N1-Gaming\N1_Gaming\N1_Gaming\settings.py changed, reloading.
+Watching for file changes with StatReloader

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ngt5hd6phr0zmpr!)u+7etf2-&_++tz1&a7ut@bnx8=88fse)t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["65.0.11.163","127.0.0.1","localhost"]
 
 
 # Application definition
@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'N1_Gaming.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'N1 gaming db',
+        'NAME': 'N1gaming-db',
         'USER': 'postgres',
-        'PASSWORD': 'prince123',
-        'HOST': 'localhost',
+        'PASSWORD': 'Prince1234',
+        'HOST': 'n1gaming-db.c3kymmwq4vs9.ap-south-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }

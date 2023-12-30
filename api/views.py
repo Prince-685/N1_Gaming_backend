@@ -3,13 +3,14 @@ from datetime import datetime, timezone
 from django.db import transaction as db_transaction
 from django.contrib import messages
 import json, re, time, random
+import pytz
 from rest_framework.decorators import api_view, permission_classes
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate
-from django.http import JsonResponse,QueryDict
+from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import CustomUser, DateModel, TimeEntryModel, Admin, Transaction, TSN, UserGame,Account,Earn_Point,Win_Percent
-from .serializers import CustomUserSerializer, DateModelSerializer, TimeEntrySerializer, TransactionSerializer, TSNSerializer, UserGameSerializer,AccountSerializer
+from .models import CustomUser, DateModel, TimeEntryModel, Admin, Transaction, TSN, UserGame,Account,Win_Percent
+from .serializers import CustomUserSerializer, TimeEntrySerializer, TransactionSerializer, TSNSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny
@@ -30,7 +31,6 @@ def user_list(request):
 def create_user(request):
     if request.method == 'POST':
         data = request.POST
-        print(data)
         serializer = CustomUserSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
@@ -100,11 +100,7 @@ def save_result(request):
         time_match = re.match(r'(\d{1,2}:\d{2})([ap]m)?', time)
         if time_match:
                 time_str = time_match.group(1)
-                time_str += ":00"  # Add seconds part
-                # if time_match.group(2) and time_match.group(2).lower() == 'pm':
-                #     # Convert to 24-hour format if 'pm'
-                #     time_str = (datetime.strptime(time_str, '%I:%M:%S') + timedelta(hours=12)).strftime('%H:%M:%S')
-
+                time_str += ":00"
         existing_data = TimeEntryModel.objects.filter(date=date_instance, Time=time_str).first()
 
         if existing_data:
@@ -248,7 +244,7 @@ def show_result_app(request):
     if request.method == 'GET':
         data = request.GET
         date_str = data.get('date')
-        print(date_str)
+        
         if date_str==dt.date.today():
             return redirect('todayResult')
            
@@ -373,6 +369,7 @@ def user_login(request):
     if request.method == 'POST':
         # Assuming the request data contains 'username' and 'password'
         data = json.loads(request.body)
+        print(data)
         username = data.get('username')
         password = data.get('password')
         user_data=CustomUser.objects.get(username=username)
@@ -530,14 +527,13 @@ def generate_unique_id():
     # Get the current timestamp
     timestamp = str(int(time.time()))
 
-    # Add other components to make it more unique (e.g., user-specific info, random values)
+   
     additional_info = 'A102XNT'
     random_value = str(random.randint(0, 9999))
-    # Combine timestamp and additional info
+    # Combine timestamp and additional info and random value
     combined_data = additional_info + timestamp + random_value
 
-    # Use a hash function (e.g., SHA-256) to generate a unique ID
-
+    
 
     return combined_data
 
@@ -581,19 +577,29 @@ def save_transaction(request):
             transaction_instance=Transaction.objects.get(transaction_id=transaction_id)
             # Loop through gamedate_time entries
             for gamedate_time_str in gamedate_times:
-                print(gamedate_time_str)
+                
                 # Format the date string to a Python datetime object
                 if gamedate_time_str:
-                    gamedate_time = datetime.strptime(gamedate_time_str, '%d/%m/%Y %H:%M %p')
+                    gamedate_time = datetime.strptime(gamedate_time_str, '%d/%m/%Y %I:%M %p')
                     slipdatetime = datetime.strptime(slipdatetime_str, '%d/%m/%Y %H:%M:%S')
+                    # naive_datetime = datetime.strptime(gamedate_time_str, '%d/%m/%Y %I:%M %p')
+
+                    # # Assume the naive datetime is in 'Asia/Kolkata' timezone
+                    # kolkata_timezone = timezone('Asia/Kolkata')
+                    # gamedate_time = kolkata_timezone.localize(naive_datetime)
+
+
+                    # naive_date_time = datetime.strptime(slipdatetime_str, '%d/%m/%Y %I:%M %p')
+
+                    # # Assume the naive datetime is in 'Asia/Kolkata' timezone
+                    # kolkata_timezone = timezone('Asia/Kolkata')
+                    # slipdatetime = kolkata_timezone.localize(naive_date_time)
                 else:
                     Transaction.objects.filter(transaction_id=transaction_id).delete()
                     return Response({'error': 'Invalid date format'}, status=status.HTTP_400_BAD_REQUEST)
 
                 # Create a unique tsn_id for each entry
                 t_id = generate_unique_id()
-                
-
                 # Create TSN instance
                 tsn_data =TSN( 
                     transaction= transaction_instance,
@@ -635,7 +641,7 @@ def save_transaction(request):
 @permission_classes([AllowAny])
 def show_transaction(request):
     # Assuming you have a related_name in the Transaction model
-    data=json.loads(request.body)
+    data=request.GET
     uname=data.get('username')
     
     transactions = Transaction.objects.filter(username=uname).order_by('-transaction_id')[:20]
@@ -665,16 +671,16 @@ def show_transaction(request):
 
         data.append(transaction_data)
 
-    return JsonResponse({'data':data}, status=status.HTTP_200_OK)
+    return JsonResponse({'transactionList':data}, status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 @permission_classes([AllowAny])
 def show_Account_date(request):
-    if request.method=='GET':
+    if request.method=='POST':
         usernme=request.user.username
-        date1_str = request.GET.get('date1')
-        date2_str = request.GET.get('date2')
+        date1_str = request.POST.get('date1')
+        date2_str = request.POST.get('date2')
         user_instance=CustomUser.objects.get(usernme=usernme)
         if date1_str and date2_str:
             try:
@@ -744,24 +750,39 @@ def Redeem_slip(request):
         tsn_instance=TSN.objects.filter(transaction=transaction_instance)
         earnpoint=0
         for i in tsn_instance:
-            print(i)
+           
             game_names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T']
-            datetime=i.gamedate_time
-            # datetime_str=datetime.strftime('%d/%m/%Y %H:%M %p')
-            print(datetime)
-            date=datetime.date()
-            time=datetime.time()
-            print(time)
-            date_instance=DateModel.objects.get(date=date)
-            time_instance=TimeEntryModel.objects.get(date=date_instance,Time=time)
-            for slot in game_names:
-                gplay=UserGame.objects.filter(tsn_entry=i,game_name=slot)
-                if gplay.exists():
-                    numbers = [entry.number for entry in gplay]
-                    play_point=[entry.Playedpoints for entry in gplay]
-                    res=numbers.index(time_instance[slot])
-                    if res>=0:
-                        earnpoint=earnpoint+play_point[res]*90
+            date_time=i.gamedate_time
+            datetime_str=date_time.strftime('%Y-%m-%d %I:%M %p')
+            
+            date_str=(datetime_str[0:10])
+            # time_str=date_time.time()
+            desired_timezone = pytz.timezone('Asia/Kolkata')
+            combined_datetime_with_timezone = date_time.replace(tzinfo=pytz.utc).astimezone(desired_timezone)
+            time_str=combined_datetime_with_timezone.time()
+           
+           
+            try:
+                date_instance=DateModel.objects.get(date=date_str)
+
+                try:
+                    time_instance=TimeEntryModel.objects.get(date=date_instance,Time=time_str)
+                    for slot in game_names:
+                        gplay=UserGame.objects.filter(tsn_entry=i,game_name=slot)
+                        if gplay.exists():
+                            numbers = [entry.number for entry in gplay]
+                            play_point=[entry.Playedpoints for entry in gplay]
+                            result = getattr(time_instance, slot)
+                            
+                            if result in numbers:
+                                res = numbers.index(result)
+                                earnpoint=earnpoint+play_point[res]*90
+                            
+
+                except TimeEntryModel.DoesNotExist:
+                    continue
+            except DateModel.DoesNotExist:
+                continue       
 
         return JsonResponse({'win':earnpoint},status=status.HTTP_200_OK)
     return JsonResponse({'error': 'Invalid method'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
@@ -775,5 +796,80 @@ def Credit(request):
     uname=data.get('username')
     user=CustomUser.objects.get(username=uname)
     credit=user.credit
-    print(credit)
+    
     return JsonResponse({'credit':credit},status=status.HTTP_200_OK)
+
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def delete_tsn_entry(request,tsn_id):
+   
+    if request.method == 'POST':
+        try:
+
+            tsn_instance=TSN.objects.get(tsn_id=tsn_id)
+            tsn_instance.cancel=True
+            tsn_instance.save()
+            user_game_instance = UserGame.objects.filter(tsn_entry__tsn_id=tsn_id)
+            
+            for usergame in user_game_instance:
+                usergame.delete()
+
+            return JsonResponse({'msg':'Game Cancelled successfully'},status=status.HTTP_200_OK)
+
+        except UserGame.DoesNotExist:
+            return JsonResponse({'error': 'Tsn entry not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    return JsonResponse({'error': 'Invalid request method.'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def ReprintSlip(request,tsn_id):
+    if request.method == 'POST':
+
+        try:
+
+            tsn_instance=TSN.objects.get(tsn_id=tsn_id)
+            user_game_instance = UserGame.objects.filter(tsn_entry__tsn_id=tsn_id)
+            l=[]
+            for i in user_game_instance:
+                slot=i.game_name
+                number=i.number
+                points=i.Playedpoints
+                value=slot +'-'+str(number)+" "+"-"+" "+str(points)
+                l.append(value)
+            slipdt=str(tsn_instance.slipdatetime).replace('T'," ").replace('Z',"")
+            gamedt=str(tsn_instance.gamedate_time).replace('T'," ").replace('Z',"")
+            
+            data={}
+            data['transaction_id']=tsn_instance.transaction.transaction_id
+            data['slipdatetime']=slipdt
+            data['gamedate_time']=gamedt
+            data['Gameplay']=l
+            data['playedpoints']=tsn_instance.playedpoints
+
+            return JsonResponse({'data':data},status=status.HTTP_200_OK)
+
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+    return JsonResponse({'error': 'Invalid request method.'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def User_status(request,uname):
+    if request.method=='GET':
+        try:
+            user_instance=CustomUser.objects.get(username=uname)
+            user_status=user_instance.is_block
+            return JsonResponse({'user_status':user_status},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    return JsonResponse({'error': 'Invalid request method.'}, status=status.HTTP_400_BAD_REQUEST)

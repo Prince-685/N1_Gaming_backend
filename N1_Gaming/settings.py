@@ -157,7 +157,7 @@ CRONJOBS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:54926",  # Add the origin of your Flutter app during development
+    "http://localhost::52663",  # Add the origin of your Flutter app during development
     "https://your_flutter_app_domain.com",  # Add the production domain of your Flutter app
 ]
 

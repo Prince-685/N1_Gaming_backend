@@ -17,9 +17,12 @@ urlpatterns = [
     path('blockuser',views.Block_user),
     path('updateCredit',views.UpdateCredit),
     path('saveTransaction',views.save_transaction),
-    path('showTransaction',views.show_transaction),
+    path('showTransaction',views.show_transaction,name='showTransaction'),
     path('showAccount',views.show_Account_date),
     path('winPercentage',views.get_win_per),
     path('credit',views.Credit),
     path('redeem',views.Redeem_slip),
+    path('cancelTsn/<str:tsn_id>',views.delete_tsn_entry),
+    path('reprintSlip/<str:tsn_id>',views.ReprintSlip),
+    path('userStatus/<str:uname>',views.User_status),
 ]

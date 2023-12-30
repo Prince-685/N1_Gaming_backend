@@ -258,17 +258,17 @@ def save_Account_details():
                 for i in Tsn_instance:
                     Playedpoints=Playedpoints+i.playedpoints
                     date_instance=model.DateModel.objects.get(date=target_date)
-                    res=model.TimeEntryModel.objects.get(date=date_instance,Time=time)
+                    time_instance=model.TimeEntryModel.objects.get(date=date_instance,Time=time)
                     for game_name in game_names:
                         gplay = model.UserGame.objects.filter(tsn_entry=Tsn_instance, game_name=game_name)
                         if gplay.exists():
                             numbers = [entry.number for entry in gplay]
                             play_point=[entry.Playedpoints for entry in gplay]
-                            res=res[game_name]
-                            win=numbers.index(res)
-                            if win>=0:
+                            res=getattr(time_instance, game_name)
+                            if res in numbers:
+                                res = numbers.index(res)
                                 
-                                earnpoint=earnpoint +play_point[win]*90
+                                earnpoint=earnpoint +play_point[res]*90
                 
         endpoint=Playedpoints - earnpoint
         Profit=Playedpoints*8/100

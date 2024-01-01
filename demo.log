@@ -1,58 +1,97 @@
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Method Not Allowed: /showAccount
+Internal Server Error: /showAccount
+Traceback (most recent call last):
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 684, in show_Account_date
+    user_instance=CustomUser.objects.get(usernme=usernme)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'usernme' into field. Choices are: account, credit, is_block, last_login, password, uid, username
+Internal Server Error: /showAccount
+Traceback (most recent call last):
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 684, in show_Account_date
+    user_instance=CustomUser.objects.get(usernme=usernme)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'usernme' into field. Choices are: account, credit, is_block, last_login, password, uid, username
+Watching for file changes with StatReloader
 E:\N1-Gaming\N1_Gaming\N1_Gaming\views.py changed, reloading.
 Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Method Not Allowed: /credit
-E:\N1-Gaming\N1_Gaming\N1_Gaming\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\N1_Gaming\views.py changed, reloading.
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Not Found: /favicon.ico
-Watching for file changes with StatReloader
-Not Found: /favicon.ico
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\N1_Gaming\settings.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\N1_Gaming\settings.py changed, reloading.
-Watching for file changes with StatReloader
-Not Found: /recentResult
-Not Found: /recentResult
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\N1_Gaming\settings.py changed, reloading.
-Watching for file changes with StatReloader
-Unauthorized: /userlogin
-Not Found: /recentResult
-Not Found: /recentResult
-Bad Request: /saveTransaction
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\N1_Gaming\settings.py changed, reloading.
-Watching for file changes with StatReloader
-Not Found: /recentResult
-Watching for file changes with StatReloader
-Not Found: /recentResult
-Internal Server Error: /credit
+Internal Server Error: /showAccount
 Traceback (most recent call last):
   File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
@@ -72,131 +111,8 @@ Traceback (most recent call last):
     response = handler(request, *args, **kwargs)
   File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
     return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 774, in Credit
-    data=json.loads(request.body)
-  File "C:\Program Files\Python310\lib\json\__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-  File "C:\Program Files\Python310\lib\json\decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "C:\Program Files\Python310\lib\json\decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-Internal Server Error: /credit
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 774, in Credit
-    data=json.loads(request.body)
-  File "C:\Program Files\Python310\lib\json\__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-  File "C:\Program Files\Python310\lib\json\decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "C:\Program Files\Python310\lib\json\decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-Internal Server Error: /credit
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 774, in Credit
-    data=json.loads(request.body)
-  File "C:\Program Files\Python310\lib\json\__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-  File "C:\Program Files\Python310\lib\json\decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "C:\Program Files\Python310\lib\json\decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Not Found: /recentResult
-Watching for file changes with StatReloader
-Not Found: /favicon.ico
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\N1_Gaming\settings.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\models.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Not Found: /recentResult
-Not Found: /recentResult
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Not Found: /favicon.ico
-Not Found: /reedeem
-Not Found: /reedeem
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 766, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
+  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 684, in show_Account_date
+    user_instance=CustomUser.objects.get(usernme=usernme)
   File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
     return getattr(self.get_queryset(), name)(*args, **kwargs)
   File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
@@ -211,1749 +127,260 @@ Traceback (most recent call last):
     clause, _ = self._add_q(q_object, self.used_aliases)
   File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
     child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1399, in to_python
-    raise exceptions.ValidationError(
-django.core.exceptions.ValidationError: ['“17/12/202” value has an invalid date format. It must be in YYYY-MM-DD format.']
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 766, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1399, in to_python
-    raise exceptions.ValidationError(
-django.core.exceptions.ValidationError: ['“17/12/2023” value has an invalid date format. It must be in YYYY-MM-DD format.']
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 766, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1399, in to_python
-    raise exceptions.ValidationError(
-django.core.exceptions.ValidationError: ['“17-12-2023” value has an invalid date format. It must be in YYYY-MM-DD format.']
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 766, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 765, in Redeem_slip
-    time=time.strftime('%H:%M:%S %z')
-AttributeError: 'str' object has no attribute 'strftime'
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 765, in Redeem_slip
-    time=datetime.strptime(time, '%H:%M:%S%z')
-  File "C:\Program Files\Python310\lib\_strptime.py", line 568, in _strptime_datetime
-    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
-  File "C:\Program Files\Python310\lib\_strptime.py", line 349, in _strptime
-    raise ValueError("time data %r does not match format %r" %
-ValueError: time data '1:15 PM' does not match format '%H:%M:%S%z'
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 766, in Redeem_slip
-    time=datetime.strptime(time, '%H:%M:%S%z')
-  File "C:\Program Files\Python310\lib\_strptime.py", line 568, in _strptime_datetime
-    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
-  File "C:\Program Files\Python310\lib\_strptime.py", line 349, in _strptime
-    raise ValueError("time data %r does not match format %r" %
-ValueError: time data '1:15 PM' does not match format '%H:%M:%S%z'
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 766, in Redeem_slip
-    time=datetime.strptime(time, '%H:%M:%S%z')
-TypeError: strptime() argument 1 must be str, not datetime.time
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 768, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 768, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 767, in Redeem_slip
-    datetime_with_timezone = desired_timezone.localize(datetime)
-AttributeError: 'datetime.timezone' object has no attribute 'localize'
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 768, in Redeem_slip
-    datetime_with_timezone = desired_timezone.localize(datetime)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\pytz\tzinfo.py", line 318, in localize
-    raise ValueError('Not naive datetime (tzinfo is already set)')
-ValueError: Not naive datetime (tzinfo is already set)
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 765, in Redeem_slip
-    datetime = datetime(2023, 12, 17, 13, 15, 0, tzinfo=pytz.utc)
-TypeError: 'datetime.datetime' object is not callable
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 769, in Redeem_slip
-    datetime_with_timezone = desired_timezone.localize(date_time)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\pytz\tzinfo.py", line 318, in localize
-    raise ValueError('Not naive datetime (tzinfo is already set)')
-ValueError: Not naive datetime (tzinfo is already set)
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 765, in Redeem_slip
-    date_time = datetime(date_time, tzinfo=pytz.utc)
-TypeError: 'datetime.datetime' object cannot be interpreted as an integer
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 768, in Redeem_slip
-    datetime_with_timezone = desired_timezone.localize(date_time)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\pytz\tzinfo.py", line 318, in localize
-    raise ValueError('Not naive datetime (tzinfo is already set)')
-ValueError: Not naive datetime (tzinfo is already set)
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 765, in Redeem_slip
-    des_time = datetime.strptime(time_12, '%d/%m/%Y %I:%M %p')
-  File "C:\Program Files\Python310\lib\_strptime.py", line 568, in _strptime_datetime
-    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
-  File "C:\Program Files\Python310\lib\_strptime.py", line 349, in _strptime
-    raise ValueError("time data %r does not match format %r" %
-ValueError: time data '1:15 PM' does not match format '%d/%m/%Y %I:%M %p'
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 768, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 774, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 774, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 775, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 776, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 768, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 767, in Redeem_slip
-    combined_datetime_with_timezone = datetime_str.replace(tzinfo=pytz.utc).astimezone(desired_timezone)
-TypeError: str.replace() takes no keyword arguments
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 771, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 771, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date_str)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 772, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date_str)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-TypeError: fromisoformat: argument must be str
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 772, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date_str)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1399, in to_python
-    raise exceptions.ValidationError(
-django.core.exceptions.ValidationError: ['“<reversed object at 0x000002660B0770D0>” value has an invalid date format. It must be in YYYY-MM-DD format.']
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 772, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date_str)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1399, in to_python
-    raise exceptions.ValidationError(
-django.core.exceptions.ValidationError: ['“<reversed object at 0x0000020D46F2E620>” value has an invalid date format. It must be in YYYY-MM-DD format.']
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 74, in parse_date
-    return datetime.date.fromisoformat(value)
-ValueError: month must be in 1..12
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1389, in to_python
-    parsed = parse_date(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\utils\dateparse.py", line 78, in parse_date
-    return datetime.date(**kw)
-ValueError: month must be in 1..12
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 772, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date_str)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
-    return self.to_python(value)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1393, in to_python
-    raise exceptions.ValidationError(
-django.core.exceptions.ValidationError: ['“3202-21-71” value has the correct format (YYYY-MM-DD) but it is an invalid date.']
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 771, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date_str)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 650, in get
-    raise self.model.DoesNotExist(
-api.models.DateModel.DoesNotExist: DateModel matching query does not exist.
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 772, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date_str)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 650, in get
-    raise self.model.DoesNotExist(
-api.models.DateModel.DoesNotExist: DateModel matching query does not exist.
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 772, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date_str)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 650, in get
-    raise self.model.DoesNotExist(
-api.models.DateModel.DoesNotExist: DateModel matching query does not exist.
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 771, in Redeem_slip
-    date_instance=DateModel.objects.get(date=date_str)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 650, in get
-    raise self.model.DoesNotExist(
-api.models.DateModel.DoesNotExist: DateModel matching query does not exist.
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 772, in Redeem_slip
-    if DateModel.objects.get(date=date_str).DoesNotExist():
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 650, in get
-    raise self.model.DoesNotExist(
-api.models.DateModel.DoesNotExist: DateModel matching query does not exist.
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 772, in Redeem_slip
-    if DateModel.objects.get(date=date_str).DoesNotExist:
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 650, in get
-    raise self.model.DoesNotExist(
-api.models.DateModel.DoesNotExist: DateModel matching query does not exist.
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 772, in Redeem_slip
-    if DateModel.objects.get(date=date_str):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 650, in get
-    raise self.model.DoesNotExist(
-api.models.DateModel.DoesNotExist: DateModel matching query does not exist.
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 781, in Redeem_slip
-    res=numbers.index(time_instance[slot])
-TypeError: 'TimeEntryModel' object is not subscriptable
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 781, in Redeem_slip
-    result=time_instance[slot]
-TypeError: 'TimeEntryModel' object is not subscriptable
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 782, in Redeem_slip
-    result=time_instance.slot
-AttributeError: 'TimeEntryModel' object has no attribute 'slot'
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 784, in Redeem_slip
-    res=numbers.index(result)
-ValueError: '44' is not in list
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 785, in Redeem_slip
-    res=numbers.index(result)
-ValueError: '44' is not in list
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /redeem
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 784, in Redeem_slip
-    res=numbers.index(result)
-ValueError: '44' is not in list
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /reprintSlip/A102XNT17039177051577
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /reprintSlip/A102XNT17039177051577
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /reprintSlip/A102XNT17039177051577
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /reprintSlip/A102XNT17039177051577
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Internal Server Error: /credit
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 797, in Credit
-    user=CustomUser.objects.get(username=uname)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 650, in get
-    raise self.model.DoesNotExist(
-api.models.CustomUser.DoesNotExist: CustomUser matching query does not exist.
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /credit
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 798, in Credit
-    user=CustomUser.objects.get(username=uname)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 650, in get
-    raise self.model.DoesNotExist(
-api.models.CustomUser.DoesNotExist: CustomUser matching query does not exist.
-E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
-Watching for file changes with StatReloader
-Internal Server Error: /userStatus/Prince
-Traceback (most recent call last):
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-TypeError: User_status() got an unexpected keyword argument 'username'
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'usernme' into field. Choices are: account, credit, is_block, last_login, password, uid, username
 E:\N1-Gaming\N1_Gaming\api\urls.py changed, reloading.
 Watching for file changes with StatReloader
-Internal Server Error: /userStatus/Prince
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
 Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\N1_Gaming\settings.py changed, reloading.
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
 Watching for file changes with StatReloader
-E:\N1-Gaming\N1_Gaming\N1_Gaming\settings.py changed, reloading.
+E:\N1-Gaming\N1_Gaming\api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /showAccount
+Not Found: /showAccount/Prince
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /showAccount/Prince
+E:\N1-Gaming\N1_Gaming\api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /showAccount/Prince
+Traceback (most recent call last):
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 684, in show_Account_date
+    user_instance=CustomUser.objects.get(usernme=uname)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 636, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'usernme' into field. Choices are: account, credit, is_block, last_login, password, uid, username
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /showAccount/Prince
+Traceback (most recent call last):
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 707, in show_Account_date
+    sum_playedpoint,sum_earnpoint,sum_profit,sum_netprofit=0
+TypeError: cannot unpack non-iterable int object
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /showAccount/Prince
+Traceback (most recent call last):
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 710, in show_Account_date
+    sum_playedpoint,sum_earnpoint,sum_profit,sum_netprofit=0
+TypeError: cannot unpack non-iterable int object
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\N1-Gaming\N1_Gaming\api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /showAccount
+Traceback (most recent call last):
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 684, in show_Account_date
+    user_instance=CustomUser.objects.get(username=uname)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 650, in get
+    raise self.model.DoesNotExist(
+api.models.CustomUser.DoesNotExist: CustomUser matching query does not exist.
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /showAccount
+Traceback (most recent call last):
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 685, in show_Account_date
+    user_instance=CustomUser.objects.get(username=uname)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 650, in get
+    raise self.model.DoesNotExist(
+api.models.CustomUser.DoesNotExist: CustomUser matching query does not exist.
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /showAccount
+Traceback (most recent call last):
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 678, in show_Account_date
+    date1 = timezone.make_aware(datetime.strptime(date1_str, '%Y-%m-%d'))
+AttributeError: type object 'datetime.timezone' has no attribute 'make_aware'
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /showAccount
+Traceback (most recent call last):
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\N1-Gaming\N1_Gaming\api\views.py", line 680, in show_Account_date
+    Account_instance=Account.objects.filter(user=user_instance, date__range=[date1_str, date2_str])
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\lookups.py", line 276, in get_prep_lookup
+    rhs_value = self.lhs.output_field.get_prep_value(rhs_value)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
+    return self.to_python(value)
+  File "C:\Users\gprin\AppData\Roaming\Python\Python310\site-packages\django\db\models\fields\__init__.py", line 1399, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“31-12-2023” value has an invalid date format. It must be in YYYY-MM-DD format.']
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\N1-Gaming\N1_Gaming\api\views.py changed, reloading.
 Watching for file changes with StatReloader

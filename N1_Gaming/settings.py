@@ -91,8 +91,8 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'Prince1234',
         'HOST': 'n1gaming-db.c3kymmwq4vs9.ap-south-1.rds.amazonaws.com',
-        'PORT': '5432',
-    }
+        'PORT':'5432',
+        }
 }
 
 

@@ -582,18 +582,7 @@ def save_transaction(request):
                 if gamedate_time_str:
                     gamedate_time = datetime.strptime(gamedate_time_str, '%d/%m/%Y %I:%M %p')
                     slipdatetime = datetime.strptime(slipdatetime_str, '%d/%m/%Y %H:%M:%S')
-                    # naive_datetime = datetime.strptime(gamedate_time_str, '%d/%m/%Y %I:%M %p')
-
-                    # # Assume the naive datetime is in 'Asia/Kolkata' timezone
-                    # kolkata_timezone = timezone('Asia/Kolkata')
-                    # gamedate_time = kolkata_timezone.localize(naive_datetime)
-
-
-                    # naive_date_time = datetime.strptime(slipdatetime_str, '%d/%m/%Y %I:%M %p')
-
-                    # # Assume the naive datetime is in 'Asia/Kolkata' timezone
-                    # kolkata_timezone = timezone('Asia/Kolkata')
-                    # slipdatetime = kolkata_timezone.localize(naive_date_time)
+           
                 else:
                     Transaction.objects.filter(transaction_id=transaction_id).delete()
                     return Response({'error': 'Invalid date format'}, status=status.HTTP_400_BAD_REQUEST)
@@ -678,26 +667,33 @@ def show_transaction(request):
 @permission_classes([AllowAny])
 def show_Account_date(request):
     if request.method=='POST':
-        usernme=request.user.username
-        date1_str = request.POST.get('date1')
-        date2_str = request.POST.get('date2')
-        user_instance=CustomUser.objects.get(usernme=usernme)
+        data = json.loads(request.body)
+        uname=data.get('username')
+        
+        date1_str = data.get('date1')
+        date2_str = data.get('date2')
+        user_instance=CustomUser.objects.get(username=uname)
         if date1_str and date2_str:
             try:
-                date1 = timezone.make_aware(datetime.strptime(date1_str, '%Y-%m-%d'))
-                date2 = timezone.make_aware(datetime.strptime(date2_str, '%Y-%m-%d'))
+                date1 = datetime.strptime(date1_str, '%d-%m-%Y')
+                date1 = date1.strftime('%Y-%m-%d')
+                date2 = datetime.strptime(date2_str, '%d-%m-%Y')
+                date2 = date2.strftime('%Y-%m-%d')
+                
                 Account_instance=Account.objects.filter(user=user_instance, date__range=[date1, date2])
-                sum_playedpoint,sum_earnpoint,sum_profit,sum_netprofit=0
+                sum_playedpoint=0
+                sum_earnpoint=0
+                sum_profit=0
+                sum_netprofit=0
+                sum_endpoint=0
                 for i in Account_instance:
                     sum_playedpoint+=i.play_points
                     sum_earnpoint+=i.earn_points
                     sum_profit+=i.profit
                     sum_netprofit+=i.net_profit
-                # sum_playedpoint = Account.objects.filter(user=user_instance, date__range=[date1, date2]).aggregate(sum('play_points'))['playedpoints__sum']
-                # sum_earnpoint=Account.objects.filter(user=user_instance, date__range=[date1, date2]).aggregate(sum('earn_points'))['earn_points__sum']
-                # sum_profit=Account.objects.filter(user=user_instance, date__range=[date1, date2]).aggregate(sum('profit'))['profit__sum']
-                # sum_netprofit=Account.objects.filter(user=user_instance, date__range=[date1, date2]).aggregate(sum('net_profit'))['net_profit__sum']
-                detail=[sum_playedpoint,sum_earnpoint,sum_profit,sum_netprofit]
+                    sum_endpoint+=i.end_points
+                agent=0
+                detail=[sum_playedpoint,sum_earnpoint,sum_endpoint,sum_profit,agent,sum_netprofit]
 
                 return JsonResponse({'data':detail},status=status.HTTP_200_OK)
             except ValueError:
@@ -705,16 +701,19 @@ def show_Account_date(request):
         else:
             date_str=dt.date.today()
             Account_instance=Account.objects.filter(user=user_instance,date=date_str)
-            sum_playedpoint,sum_earnpoint,sum_profit,sum_netprofit=0
+            sum_playedpoint=0
+            sum_earnpoint=0
+            sum_profit=0
+            sum_netprofit=0
+            sum_endpoint=0
             for i in Account_instance:
                 sum_playedpoint+=i.play_points
                 sum_earnpoint+=i.earn_points
                 sum_profit+=i.profit
                 sum_netprofit+=i.net_profit
-            # sum_earnpoint=Account.objects.filter(user=user_instance, date=date_str).aggregate(sum('earn_points'))['earn_points__sum']
-            # sum_profit=Account.objects.filter(user=user_instance, date=date_str).aggregate(sum('profit'))['profit__sum']
-            # sum_netprofit=Account.objects.filter(user=user_instance, date=date_str).aggregate(sum('net_profit'))['net_profit__sum']
-            detail=[sum_playedpoint,sum_earnpoint,sum_profit,sum_netprofit]
+                sum_endpoint+=i.end_points
+            agent=0
+            detail=[sum_playedpoint,sum_earnpoint,sum_endpoint,sum_profit,agent,sum_netprofit]
 
             return JsonResponse({'data':detail},status=status.HTTP_200_OK)
         
@@ -868,6 +867,7 @@ def User_status(request,uname):
         try:
             user_instance=CustomUser.objects.get(username=uname)
             user_status=user_instance.is_block
+            User_status=
             return JsonResponse({'user_status':user_status},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

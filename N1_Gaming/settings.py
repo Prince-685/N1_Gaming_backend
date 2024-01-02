@@ -156,9 +156,34 @@ CRONJOBS = [
 
 ]
 
+
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost::52663",  # Add the origin of your Flutter app during development
+    # "http://localhost:54631",
+    "http://localhost::*",
+    "http://3.108.237.235",
     "https://your_flutter_app_domain.com",  # Add the production domain of your Flutter app
+]
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 ]
 
 

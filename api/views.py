@@ -867,7 +867,6 @@ def User_status(request,uname):
         try:
             user_instance=CustomUser.objects.get(username=uname)
             user_status=user_instance.is_block
-            User_status=
             return JsonResponse({'user_status':user_status},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

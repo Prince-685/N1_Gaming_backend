@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'N1_Gaming.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'N1gaming-db',
+        'NAME': 'N1 gaming db',
         'USER': 'postgres',
-        'PASSWORD': 'Prince1234',
-        'HOST': 'n1gaming-db.c3kymmwq4vs9.ap-south-1.rds.amazonaws.com',
+        'PASSWORD': 'prince123',
+        'HOST': 'localhost',
         'PORT':'5432',
         }
 }
@@ -156,11 +156,38 @@ CRONJOBS = [
 
 ]
 
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost::52663",  # Add the origin of your Flutter app during development
+#     "https://your_flutter_app_domain.com",  # Add the production domain of your Flutter app
+# ]
+
+
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost::52663",  # Add the origin of your Flutter app during development
-    "https://your_flutter_app_domain.com",  # Add the production domain of your Flutter app
+    # "http://localhost:54631",
+    "http://localhost::*",
+    "http://3.108.237.235",
 ]
 
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 
 LOGGING = {

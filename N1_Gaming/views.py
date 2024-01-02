@@ -262,8 +262,13 @@ def save_Account_details():
                     for game_name in game_names:
                         gplay = model.UserGame.objects.filter(tsn_entry=Tsn_instance, game_name=game_name)
                         if gplay.exists():
-                            numbers = [entry.number for entry in gplay]
-                            play_point=[entry.Playedpoints for entry in gplay]
+                            numbers=[]
+                            play_point=[]
+                            for g in gplay:
+                                numbers.append(g.number)
+                                play_point.append(g.Playedpoints)
+                            # numbers = [entry.number for entry in gplay]
+                            # play_point=[entry.Playedpoints for entry in gplay]
                             res=getattr(time_instance, game_name)
                             if res in numbers:
                                 res = numbers.index(res)
@@ -285,3 +290,5 @@ def save_Account_details():
             net_profit=netProfit
         )
         Account_instance.save()
+
+save_Account_details()

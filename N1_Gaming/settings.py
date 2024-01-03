@@ -159,11 +159,11 @@ CRONJOBS = [
 
 CORS_ALLOWED_ORIGINS = [
     # "http://localhost:54631",
-    "http://localhost::*",
+    "http://localhost:*",
     "http://3.108.237.235",
     "https://your_flutter_app_domain.com",  # Add the production domain of your Flutter app
 ]
-]
+
 
 CORS_ALLOW_METHODS = [
     'DELETE',

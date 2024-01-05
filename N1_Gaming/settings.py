@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'N1_Gaming.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'N1 gaming db',
+        'NAME': 'N1gaming-db',
         'USER': 'postgres',
-        'PASSWORD': 'prince123',
-        'HOST': 'localhost',
+        'PASSWORD': 'Prince1234',
+        'HOST': 'n1gaming-db.c3kymmwq4vs9.ap-south-1.rds.amazonaws.com',
         'PORT':'5432',
         }
 }

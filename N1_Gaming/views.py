@@ -21,9 +21,9 @@ def Admindashboard(request):
       l.append(profit)
       l.append(net_profit)
       user_detail.append(l)
-    tsn_instance=model.TSN.objects.all()
+    tsn_instance=model.TSN.objects.filter(gamedate_time__date=today)
     totalplayedpoints=sum([entry.playedpoints for entry in tsn_instance])
-    account_instance=model.Account.objects.all()
+    account_instance=model.Account.objects.filter(date=today)
     totalearnpoints=sum([entry.earn_points for entry in account_instance])
     endpoints=totalplayedpoints-totalearnpoints
     totalprofit=sum([entry.net_profit for entry in account_instance])
@@ -76,7 +76,7 @@ def calculate_Result(playedpoint,numbers,totalplaypoints,given_win_p):
         wamount= i*90
         win_amount.append(wamount)
     closest_index = min((i for i, value in enumerate(win_amount) if value < max_win_amount), default=None, key=lambda i: max_win_amount - win_amount[i])
-    print(closest_index)
+
     if closest_index==None:
         generated_number = random.choice([str(num).zfill(2) for num in range(100) if num not in numbers])
         earnpoints=0
@@ -98,28 +98,45 @@ def Save_result_earnpoint():
     gamedate_time_str=gamedate_time_str.strftime('%d/%m/%Y %I:%M %p')
 
     gamedate_time = datetime.strptime(gamedate_time_str, '%d/%m/%Y %I:%M %p')
-    if model.TSN.objects.filter(gamedate_time=gamedate_time).exists():
-        Tsn_instance=model.TSN.objects.get(gamedate_time=gamedate_time)
-            #Calculating Result According to winning Percentage
-        game_names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T']
-        result_dict = {}
-        earnPoints={}
 
+    game_names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T']
+    result_dict = {}
+    earnPoints={}
+    if model.TSN.objects.filter(gamedate_time=gamedate_time).exists():
         for game_name in game_names:
-            gplay =model.UserGame.objects.filter(tsn_entry=Tsn_instance, game_name=game_name)
-            print(gplay)
-            if gplay.exists():
-                numbers = [entry.number for entry in gplay]
-                playedpoint = [entry.Playedpoints for entry in gplay]
-                totalplaypoints = sum([entry.Playedpoints for entry in gplay])
-                result = calculate_Result(playedpoint, numbers, totalplaypoints, given_win_p)
+            n=[]
+            p=[]
+            tp=[]
+            Tsn_instance=model.TSN.objects.filter(gamedate_time=gamedate_time)
+            for t in Tsn_instance:
+
+                gplay =model.UserGame.objects.filter(tsn_entry=t, game_name=game_name)
+                if gplay.exists():
+                    numbers = [entry.number for entry in gplay]
+                    playedpoint = [entry.Playedpoints for entry in gplay]
+                    totalplaypoints = sum([entry.Playedpoints for entry in gplay])
+                    n.append(numbers)
+                    p.append(playedpoint)
+                    tp.append(totalplaypoints)
+            tppoints=sum(tp)
+            if n and p and tppoints:
+                number=[]
+                points=[]
+                for i in range(len(n)):
+                    for j in range(len(n[i])):
+                        if n[i][j] not in number:
+                            number.append(n[i][j])
+                            points.append(p[i][j])
+                        else:
+                            a=number.index(n[i][j])
+                            points[a]=points[a]+p[i][j]
+
+                result = calculate_Result(points, number, tppoints, given_win_p)
                 result_dict[game_name]=result[0]
                 earnPoints[game_name]=result[1]
             else:
-                result_dict[game_name] = f"{random.randint(0, 99):02d}"
-                earnPoints[game_name]=0
-
-        print(result_dict,earnPoints)
+                    result_dict[game_name] = f"{random.randint(0, 99):02d}"
+                    earnPoints[game_name]=0
         date_instance, _ = model.DateModel.objects.get_or_create(date=today)
         time_entry = model.TimeEntryModel(
                 date=date_instance,
@@ -236,9 +253,8 @@ def Save_result_earnpoint():
 
 
 
-
 def save_Account_details():
-    game_names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T']
+    
     current_time = datetime.now()
     adjusted_time = current_time - timedelta(minutes=2)
     adjusted_time = adjusted_time.replace(second=0, microsecond=0)
@@ -246,38 +262,36 @@ def save_Account_details():
     userlist=model.CustomUser.objects.all()
     target_date=dt.date.today()
     date_time=str(target_date)+" "+str(time)
-    print(date_time)
+    
     
     for user in userlist:
         Playedpoints=0
         earnpoint=0
         transaction_instance=model.Transaction.objects.filter(username=user,date=target_date)
-        for i in range(len(transaction_instance)):
-            Tsn_instance= model.TSN.objects.filter(transaction=transaction_instance[i], gamedate_time=date_time)
+        
+        date_instance=model.DateModel.objects.get(date=target_date)
+        time_instance=model.TimeEntryModel.objects.get(date=date_instance,Time=time)
+        for t in range(len(transaction_instance)):
+            
+            Tsn_instance= model.TSN.objects.filter(transaction=transaction_instance[t], gamedate_time=date_time)
+            
             if Tsn_instance.exists():
                 for i in Tsn_instance:
                     Playedpoints=Playedpoints+i.playedpoints
-                    date_instance=model.DateModel.objects.get(date=target_date)
-                    time_instance=model.TimeEntryModel.objects.get(date=date_instance,Time=time)
-                    for game_name in game_names:
-                        gplay = model.UserGame.objects.filter(tsn_entry=Tsn_instance, game_name=game_name)
-                        if gplay.exists():
-                            numbers=[]
-                            play_point=[]
-                            for g in gplay:
-                                numbers.append(g.number)
-                                play_point.append(g.Playedpoints)
-                            # numbers = [entry.number for entry in gplay]
-                            # play_point=[entry.Playedpoints for entry in gplay]
-                            res=getattr(time_instance, game_name)
-                            if res in numbers:
-                                res = numbers.index(res)
-                                
-                                earnpoint=earnpoint +play_point[res]*90
+                    
+                    gplay = model.UserGame.objects.filter(tsn_entry=i)
+                    
+                    if gplay.exists():
+                        for g in gplay:
+                            gname=g.game_name
+                            res=getattr(time_instance, gname)
+                            if res==g.number:
+                                earnpoint=earnpoint +g.Playedpoints*90
                 
         endpoint=Playedpoints - earnpoint
         Profit=Playedpoints*8/100
         netProfit=endpoint-Profit
+        print(Playedpoints,earnpoint,endpoint,Profit,netProfit)
         user_instance=model.CustomUser.objects.get(username=user)
         Account_instance=model.Account(
             user=user_instance,
@@ -290,5 +304,3 @@ def save_Account_details():
             net_profit=netProfit
         )
         Account_instance.save()
-
-save_Account_details()

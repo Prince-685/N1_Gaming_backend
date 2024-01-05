@@ -1,12 +1,11 @@
 import datetime as dt
-from datetime import datetime, timezone
+from datetime import datetime
 from django.db import transaction as db_transaction
 from django.contrib import messages
 import json, re, time, random
 import pytz
 from rest_framework.decorators import api_view, permission_classes
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import CustomUser, DateModel, TimeEntryModel, Admin, Transaction, TSN, UserGame,Account,Win_Percent

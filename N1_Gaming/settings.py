@@ -151,20 +151,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CRONJOBS = [
-    ('*/15 9-22 * * *', 'api.cron.Save_result_earnpoint'),
-    ('2-59/15 9-22 * * *', 'api.cron.save_Account_details')
+   ('30-59/15 9-21 * * *', 'N1_Gaming.views.Save_result_earnpoint'),
+    ('32-59/15 9-21 * * *', 'N1_Gaming.views.save_Account_details')
 
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost::52663",  # Add the origin of your Flutter app during development
-#     "https://your_flutter_app_domain.com",  # Add the production domain of your Flutter app
-# ]
-
 
 CORS_ALLOWED_ORIGINS = [
-    # "http://localhost:54631",
-    "http://localhost::*",
+    "http://localhost:*",
     "http://3.108.237.235",
 ]
 

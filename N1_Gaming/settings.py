@@ -151,8 +151,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CRONJOBS = [
-   ('30-59/15 9-21 * * *', 'N1_Gaming.views.Save_result_earnpoint'),
-    ('32-59/15 9-21 * * *', 'N1_Gaming.views.save_Account_details'),
+    ('30 9 * * *', 'N1_Gaming.views.Save_result_earnpoint'),
+    ('32 9 * * *', 'N1_Gaming.views.save_Account_details'),
+    ('45 9 * * *', 'N1_Gaming.views.Save_result_earnpoint'),
+    ('47 9 * * *', 'N1_Gaming.views.save_Account_details'),
+   ('0-59/15 10-21 * * *', 'N1_Gaming.views.Save_result_earnpoint'),
+    ('2-59/15 10-21 * * *', 'N1_Gaming.views.save_Account_details'),
     ('0 22 * * *', 'N1_Gaming.views.Save_result_earnpoint'),
     ('2 22 * * *', 'N1_Gaming.views.save_Account_details'),
 

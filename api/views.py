@@ -629,10 +629,10 @@ def save_transaction(request):
 @permission_classes([AllowAny])
 def show_transaction(request):
     # Assuming you have a related_name in the Transaction model
-    data=request.GET
+    data=json.loads(request.body)
     uname=data.get('username')
     
-    transactions = Transaction.objects.filter(username=uname).order_by('-transaction_id')[:20]
+    transactions = Transaction.objects.filter(username=uname).order_by('-date')[:20]
     
     data = []
 

@@ -843,11 +843,22 @@ def ReprintSlip(request,tsn_id):
                 l.append(value)
             slipdt=str(tsn_instance.slipdatetime).replace('T'," ").replace('Z',"")
             gamedt=str(tsn_instance.gamedate_time).replace('T'," ").replace('Z',"")
-            
+
+            original_format = "%Y-%m-%d %H:%M:%S%z"
+            dt_original = datetime.strptime(slipdt, original_format)
+            target_timezone = pytz.timezone("Asia/Kolkata")  # Adjust this to your desired time zone
+            dt_target = dt_original.astimezone(target_timezone)
+            corrected_slipdt = dt_target.strftime("%Y-%m-%d %I:%M:%S %p")
+
+
+            dt1_original = datetime.strptime(gamedt, original_format)
+            dt1_target = dt1_original.astimezone(target_timezone)
+            corrected_gamedt = dt1_target.strftime("%Y-%m-%d %I:%M:%S %p")
+
             data={}
             data['transaction_id']=tsn_instance.transaction.transaction_id
-            data['slipdatetime']=slipdt
-            data['gamedate_time']=gamedt
+            data['slipdatetime']=corrected_slipdt
+            data['gamedate_time']=corrected_gamedt
             data['Gameplay']=l
             data['playedpoints']=tsn_instance.playedpoints
 

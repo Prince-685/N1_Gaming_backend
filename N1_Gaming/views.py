@@ -21,11 +21,10 @@ def Admindashboard(request):
       l.append(profit)
       l.append(net_profit)
       user_detail.append(l)
-    tsn_instance=model.TSN.objects.filter(gamedate_time__date=today)
-    totalplayedpoints=sum([entry.playedpoints for entry in tsn_instance])
     account_instance=model.Account.objects.filter(date=today)
+    totalplayedpoints=sum([entry.play_points for entry in account_instance])
     totalearnpoints=sum([entry.earn_points for entry in account_instance])
-    endpoints=totalplayedpoints-totalearnpoints
+    endpoints=sum([entry.end_points for entry in account_instance])
     totalprofit=sum([entry.net_profit for entry in account_instance])
 
     return render(request,'dashboard.html',{'playedpoint':totalplayedpoints,'earnpoint':totalearnpoints,'endpoint':endpoints,'profit':totalprofit,'userdata':user_detail})

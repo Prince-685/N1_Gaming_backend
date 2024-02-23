@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import datetime as dt
 from api import models as model
+import numpy as np
+
 
 def Admindashboard(request):
     today=dt.date.today()
@@ -68,24 +70,55 @@ logger = logging.getLogger(__name__)
 
 
 
-def calculate_Result(playedpoint,numbers,totalplaypoints,given_win_p):
-    win_amount=[]
-    max_win_amount=totalplaypoints*given_win_p/100
-    for i in playedpoint:
-        wamount= i*90
-        win_amount.append(wamount)
-    closest_index = min((i for i, value in enumerate(win_amount) if value < max_win_amount), default=None, key=lambda i: max_win_amount - win_amount[i])
-
-    if closest_index==None:
-        generated_number = random.choice([str(num).zfill(2) for num in range(100) if num not in numbers])
-        earnpoints=0
-        return generated_number,earnpoints
-
-    number=numbers[closest_index]
-    earnpoints=win_amount[closest_index]
-    return number,earnpoints
-
-
+def wining_result(sold_ticket,percent):
+    result={}
+    game_names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T']
+    random_slot_list=[]
+    for i in game_names:
+        playedpoint=sold_ticket[i].values()
+        numbers=sold_ticket[i].keys()
+        max_win=sum(playedpoint)*percent/100
+        if max_win>=min(sold_ticket[i].values())*90:
+            mul_playedpoint=list(np.array(list(playedpoint)) * 90)
+            closest_index = min((i for i, value in enumerate(mul_playedpoint) if value <= max_win), default=None, key=lambda i: max_win - mul_playedpoint[i])
+            result[i]=list(numbers)[closest_index]
+        else:
+            random_slot_list.append(i)
+    remaining_sum=0
+    for i in random_slot_list:
+        remaining_sum+=sum(sold_ticket[i].values())
+    print(remaining_sum)
+    max_am=remaining_sum*percent/100
+    print(random_slot_list)
+    win_slot=random.choice(random_slot_list)
+    print(win_slot)
+    print(max_am)
+    for i in random_slot_list:
+        numbers=sold_ticket[i].keys()
+        if i==win_slot:
+            playedpoint=sold_ticket[i].values()
+            mul_playedpoint=list(np.array(list(playedpoint)) * 90)
+            closest_index = min((i for i, value in enumerate(mul_playedpoint) if value <= max_am), default=None, key=lambda i: max_am - mul_playedpoint[i])
+            if closest_index==None:
+                generated_number=-1
+                while(True):
+                    generated_number=random.randint(0, 99)
+                    generated_number="{:02d}".format(generated_number)
+                    if(generated_number not in numbers):
+                        result[i]=generated_number
+                        break
+            else:
+                result[i]=list(numbers)[closest_index]
+        else:
+            generated_number=-1
+            while(True):
+                generated_number=random.randint(0, 99)
+                generated_number="{:02d}".format(generated_number)
+                if(generated_number not in numbers):
+                    result[i]=generated_number
+                    break
+            
+    return result
 
 def Save_result_earnpoint():
     
@@ -99,8 +132,7 @@ def Save_result_earnpoint():
     gamedate_time = datetime.strptime(gamedate_time_str, '%d/%m/%Y %I:%M %p')
 
     game_names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T']
-    result_dict = {}
-    earnPoints={}
+    ticket_sold={}
     if model.TSN.objects.filter(gamedate_time=gamedate_time).exists():
         for game_name in game_names:
             n=[]
@@ -124,78 +156,47 @@ def Save_result_earnpoint():
                 for i in range(len(n)):
                     for j in range(len(n[i])):
                         if n[i][j] not in number:
+                            
                             number.append(n[i][j])
                             points.append(p[i][j])
                         else:
                             a=number.index(n[i][j])
                             points[a]=points[a]+p[i][j]
-
-                result = calculate_Result(points, number, tppoints, given_win_p)
-                result_dict[game_name]=result[0]
-                earnPoints[game_name]=result[1]
-            else:
-                    result_dict[game_name] = f"{random.randint(0, 99):02d}"
-                    earnPoints[game_name]=0
+                ticket_sold[game_name]=dict(zip(number,points))       
+        winresult=wining_result(ticket_sold,given_win_p)
         date_instance, _ = model.DateModel.objects.get_or_create(date=today)
         time_entry = model.TimeEntryModel(
                 date=date_instance,
                 Time=time_str,
-                A=result_dict['A'],
-                B=result_dict['B'],
-                C=result_dict['C'],
-                D=result_dict['D'],
-                E=result_dict['E'],
-                F=result_dict['F'],
-                G=result_dict['G'],
-                H=result_dict['H'],
-                I=result_dict['I'],
-                J=result_dict['J'],
-                K=result_dict['K'],
-                L=result_dict['L'],
-                M=result_dict['M'],
-                N=result_dict['N'],
-                O=result_dict['O'],
-                P=result_dict['P'],
-                Q=result_dict['Q'],
-                R=result_dict['R'],
-                S=result_dict['S'],
-                T=result_dict['T'],
+                A=winresult['A'],
+                B=winresult['B'],
+                C=winresult['C'],
+                D=winresult['D'],
+                E=winresult['E'],
+                F=winresult['F'],
+                G=winresult['G'],
+                H=winresult['H'],
+                I=winresult['I'],
+                J=winresult['J'],
+                K=winresult['K'],
+                L=winresult['L'],
+                M=winresult['M'],
+                N=winresult['N'],
+                O=winresult['O'],
+                P=winresult['P'],
+                Q=winresult['Q'],
+                R=winresult['R'],
+                S=winresult['S'],
+                T=winresult['T'],
             )        
         time_entry.save()
         
-        earnpoint_entry = model.Earn_Point(
-                date=date_instance,
-                time=time_str,
-                A=earnPoints['A'],
-                B=earnPoints['B'],
-                C=earnPoints['C'],
-                D=earnPoints['D'],
-                E=earnPoints['E'],
-                F=earnPoints['F'],
-                G=earnPoints['G'],
-                H=earnPoints['H'],
-                I=earnPoints['I'],
-                J=earnPoints['J'],
-                K=earnPoints['K'],
-                L=earnPoints['L'],
-                M=earnPoints['M'],
-                N=earnPoints['N'],
-                O=earnPoints['O'],
-                P=earnPoints['P'],
-                Q=earnPoints['Q'],
-                R=earnPoints['R'],
-                S=earnPoints['S'],
-                T=earnPoints['T'],
-            )
-        earnpoint_entry.save()
 
     else:
         game_names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T']
         result_dict = {}
-        earnPoints={}
         for game_name in game_names:
             result_dict[game_name] = f"{random.randint(0, 99):02d}"
-            earnPoints[game_name]=0
 
         date_instance, _ = model.DateModel.objects.get_or_create(date=today)
         time_entry = model.TimeEntryModel(
@@ -223,32 +224,8 @@ def Save_result_earnpoint():
                 T=result_dict['T'],
             )        
         time_entry.save()
-        
-        earnpoint_entry = model.Earn_Point(
-                date=date_instance,
-                time=time_str,
-                A=earnPoints['A'],
-                B=earnPoints['B'],
-                C=earnPoints['C'],
-                D=earnPoints['D'],
-                E=earnPoints['E'],
-                F=earnPoints['F'],
-                G=earnPoints['G'],
-                H=earnPoints['H'],
-                I=earnPoints['I'],
-                J=earnPoints['J'],
-                K=earnPoints['K'],
-                L=earnPoints['L'],
-                M=earnPoints['M'],
-                N=earnPoints['N'],
-                O=earnPoints['O'],
-                P=earnPoints['P'],
-                Q=earnPoints['Q'],
-                R=earnPoints['R'],
-                S=earnPoints['S'],
-                T=earnPoints['T'],
-            )
-        earnpoint_entry.save()
+
+
 
 
 

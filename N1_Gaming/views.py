@@ -280,3 +280,18 @@ def save_Account_details():
             net_profit=netProfit
         )
         Account_instance.save()
+
+
+def del_old_data():
+    current_date = datetime.now()
+
+    # Calculate one month earlier
+    one_month_earlier = current_date - timedelta(days=30)
+    date_instance = model.DateModel.objects.filter(date__lt=one_month_earlier.date())
+    for i in date_instance:
+        i.delete()
+
+    transaction_instance=model.Transaction.objects.filter(date__lt=one_month_earlier.date())
+    for j in transaction_instance:
+        j.delete()
+        
